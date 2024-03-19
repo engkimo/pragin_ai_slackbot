@@ -1,0 +1,40 @@
+display_information:
+  name: PragIn-AI Bot
+  description: Chatbot to answer questions
+  background_color: "#000000"
+  long_description:
+    "PragIn-AI Bot using private dataset and dedicated OpenAI Assistant to answer questions from internal users.\r
+
+    \r
+
+    Message the bot directly or use the /pragin-ai slashcommand in any channel to start interacting with the bot. It will respond in a DM using ephemeral messages."
+features:
+  bot_user:
+    display_name: PragIn-AI Bot
+    always_online: true
+  slash_commands:
+    - command: /pragin-ai
+      description: ask a question
+      should_escape: false
+oauth_config:
+  scopes:
+    bot:
+      - app_mentions:read
+      - chat:write
+      - commands
+      - im:history
+      - chat:write.public
+settings:
+  event_subscriptions:
+    bot_events:
+      - app_mention
+      - message.im
+  interactivity:
+    is_enabled: true
+  org_deploy_enabled: false
+  socket_mode_enabled: true
+  token_rotation_enabled: false
+app_level_tokens:
+  - name: PragInAIToken
+    scopes:
+      - connections:write
