@@ -25,18 +25,18 @@ ASSISTANT_ID = os.environ["ASSISTANT_ID"]
 # Handle non-slash command events
 @app.event("app_mention")
 async def event_test(event, say):
-    await say(f"Hi there, <@{event['user']}>! Please use the /faq command to ask me a question.")
+    await say(f"Hi there, <@{event['user']}>! Please use the /pragin-ai command to ask me a question.")
 
 @app.event("message")
 async def handle_message_events(event, say):
-    await say(f"Hi there, <@{event['user']}>! Please use the /faq command to ask me a question.")
+    await say(f"Hi there, <@{event['user']}>! Please use the /pragin-ai command to ask me a question.")
 
 # Handle proper slash command events
-@app.command("/faq")
+@app.command("/pragin-ai")
 async def faq_command(ack, body):
-    logging.info(f"User {body['user_name']} called /faq with payload \"{body['text']}\"")
+    logging.info(f"User {body['user_name']} called /pragin-ai with payload \"{body['text']}\"")
     if not body['text'].strip():  # Check if the command was called with no additional text
-        response = "Please provide a question after the /faq command."
+        response = "Please provide a question after the /pragin-ai command."
         await ack(f"{response}")
     else:
         asyncio.create_task(handle_faq(body))
