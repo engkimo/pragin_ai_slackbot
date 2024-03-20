@@ -1,6 +1,6 @@
 # pragin-ai slackbot
 
-Slack を使った、あなただけの個人 AIbot を構築
+あなただけの、PersonalAISlackBot
 
 この Slack ボットは、websocket、非同期実行、OpenAI API を使用して質問に答えます。Slack で/pragin-ai コマンドを受信すると、そのコマンドテキストを OpenAI API に送信し、API の応答をユーザーに直接一時的なメッセージで送り返します。
 
